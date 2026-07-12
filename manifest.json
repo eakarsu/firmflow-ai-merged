@@ -1,0 +1,31 @@
+{
+  "id": "firmflow-ai-merged",
+  "title": "Firmflow AI App",
+  "industry": "Legal, Compliance & Risk",
+  "industryId": "legal-compliance-risk",
+  "specialization": "Firmflow AI",
+  "sourcePlatformGroup": "legal-practice-platform",
+  "sources": [
+    "AICourtReportingLegalTranscription",
+    "AINotaryDocumentVerification",
+    "firmflow-ai",
+    "legalForms",
+    "smallLawFirm"
+  ],
+  "featureCount": 401,
+  "candidateFeatureCount": 504,
+  "eliminatedSimilarFeatures": 103,
+  "evidenceCount": 1712,
+  "aiPageCount": 0,
+  "sourceAIPageCount": 0,
+  "featureEvidencePolicy": "Existing source routes, pages, APIs, models, schemas, and navigation only",
+  "optimizationPolicy": "Equivalent feature names are consolidated once per industry and assigned to one canonical app owner",
+  "database": "database.sqlite",
+  "databaseSeed": {
+    "seededProjects": 1,
+    "seededTables": 3,
+    "seededRows": 70
+  },
+  "visibleFeatureCount": 4,
+  "featureVisibilityMode": "seeded-or-ai"
+}
