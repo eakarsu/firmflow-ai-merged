@@ -89,23 +89,36 @@
     "canonicalKey": "accept",
     "aliases": [],
     "kinds": [
-      "api",
+      "ai-page",
       "page"
     ],
     "routes": [
-      "/:id/accept",
       "/api/ai-billing/suggestions/:id/accept",
-      "/api/ai-calendar/suggestions/:id/accept"
+      "/api/ai-calendar/suggestions/:id/accept",
+      "/billing/ai-suggestions?tool=accept",
+      "/calendar/ai-assistant?tool=accept"
     ],
     "sourceProjects": [
-      "AIContractNegotiationAssistant",
       "legalForms"
     ],
     "consolidatedFromApps": [
-      "legal-compliance-risk/contract-negotiation-assistant",
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/billing/ai-suggestions.ejs:1",
+        "route": "/billing/ai-suggestions?tool=accept",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/calendar/ai-assistant.ejs:1",
+        "route": "/calendar/ai-assistant?tool=accept",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
@@ -119,13 +132,6 @@
         "path": "routes/ai-calendar.js:355",
         "route": "/api/ai-calendar/suggestions/:id/accept",
         "originApp": "legal-compliance-risk/firmflow-ai-merged"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIContractNegotiationAssistant",
-        "path": "backend/src/routes/redlines.js:90",
-        "route": "/:id/accept",
-        "originApp": "legal-compliance-risk/contract-negotiation-assistant"
       }
     ]
   },
@@ -886,13 +892,82 @@
     ]
   },
   {
+    "name": "Analyze",
+    "canonicalKey": "analyze",
+    "aliases": [],
+    "kinds": [
+      "ai-page",
+      "page"
+    ],
+    "routes": [
+      "/ai/conflicts-dashboard",
+      "/api/ai-conflicts/analyze",
+      "/api/ai-predictions/analyze",
+      "/api/contract-analysis/analyze",
+      "/cases/predictions",
+      "/contract-analysis/new"
+    ],
+    "sourceProjects": [
+      "legalForms"
+    ],
+    "consolidatedFromApps": [
+      "legal-compliance-risk/firmflow-ai-merged"
+    ],
+    "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/ai/conflicts-dashboard.ejs:1",
+        "route": "/ai/conflicts-dashboard",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/cases/predictions.ejs:1",
+        "route": "/cases/predictions",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/contract-analysis/new.ejs:1",
+        "route": "/contract-analysis/new",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
+      {
+        "kind": "page",
+        "sourceProject": "legalForms",
+        "path": "routes/ai-conflicts.js:55",
+        "route": "/api/ai-conflicts/analyze",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
+      {
+        "kind": "page",
+        "sourceProject": "legalForms",
+        "path": "routes/ai-predictions.js:57",
+        "route": "/api/ai-predictions/analyze",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
+      {
+        "kind": "page",
+        "sourceProject": "legalForms",
+        "path": "routes/contract-analysis.js:158",
+        "route": "/api/contract-analysis/analyze",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      }
+    ]
+  },
+  {
     "name": "Analyze Case Timeline",
     "canonicalKey": "analyze case timeline",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "api"
     ],
     "routes": [
+      "/ai-new?tool=analyze-case-timeline",
       "/analyze-case-timeline"
     ],
     "sourceProjects": [
@@ -902,6 +977,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "AICourtReportingLegalTranscription",
+        "path": "client/src/pages/AIFeaturesNewPage.js:17",
+        "route": "/ai-new?tool=analyze-case-timeline",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "api",
         "sourceProject": "AICourtReportingLegalTranscription",
@@ -953,9 +1035,11 @@
     "canonicalKey": "analyze exhibit relevance",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "api"
     ],
     "routes": [
+      "/ai-new?tool=analyze-exhibit-relevance",
       "/analyze-exhibit-relevance"
     ],
     "sourceProjects": [
@@ -965,6 +1049,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "AICourtReportingLegalTranscription",
+        "path": "client/src/pages/AIFeaturesNewPage.js:73",
+        "route": "/ai-new?tool=analyze-exhibit-relevance",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "api",
         "sourceProject": "AICourtReportingLegalTranscription",
@@ -1682,10 +1773,12 @@
     "canonicalKey": "calculate sol",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "page"
     ],
     "routes": [
-      "/api/ai-calendar/calculate-sol"
+      "/api/ai-calendar/calculate-sol",
+      "/calendar/ai-assistant?tool=calculate-sol"
     ],
     "sourceProjects": [
       "legalForms"
@@ -1694,6 +1787,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/calendar/ai-assistant.ejs:1",
+        "route": "/calendar/ai-assistant?tool=calculate-sol",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
@@ -3183,35 +3283,33 @@
     "canonicalKey": "classify",
     "aliases": [],
     "kinds": [
-      "api",
+      "ai-page",
       "page"
     ],
     "routes": [
       "/api/ai-communications/classify",
-      "/classify"
+      "/communications/ai-drafts?tool=classify"
     ],
     "sourceProjects": [
-      "AIAutomatedatagovernance",
       "legalForms"
     ],
     "consolidatedFromApps": [
-      "legal-compliance-risk/automatedatagovernance",
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/communications/ai-drafts.ejs:1",
+        "route": "/communications/ai-drafts?tool=classify",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
         "path": "routes/ai-communications.js:229",
         "route": "/api/ai-communications/classify",
         "originApp": "legal-compliance-risk/firmflow-ai-merged"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIAutomatedatagovernance",
-        "path": "backend/routes/ai.js:93",
-        "route": "/classify",
-        "originApp": "legal-compliance-risk/automatedatagovernance"
       }
     ]
   },
@@ -3764,16 +3862,13 @@
     "sourceProjects": [
       "AIBailBondRiskAssessor",
       "AIContractLifecycleManager",
-      "AIDigitalcasemanager",
       "AIESGSustainabilityReporter",
-      "AIImmigrationCaseManager",
       "AINotaryDocumentVerification"
     ],
     "consolidatedFromApps": [
       "legal-compliance-risk/contract-negotiation-assistant",
       "legal-compliance-risk/firmflow-ai-merged",
       "legal-compliance-risk/gdpr-data-mapping-privacy-manager",
-      "legal-compliance-risk/immigration-case-manager",
       "legal-compliance-risk/tenant-rights-advisor"
     ],
     "evidence": [
@@ -3811,20 +3906,6 @@
         "path": "frontend/src/pages/Dashboard.jsx:102",
         "route": "/compliance-checks",
         "originApp": "legal-compliance-risk/firmflow-ai-merged"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIDigitalcasemanager",
-        "path": "backend/routes/aiNew.js:566",
-        "route": "/compliance-check",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIImmigrationCaseManager",
-        "path": "backend/src/routes/ai.js:147",
-        "route": "/compliance-check",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
       },
       {
         "kind": "api",
@@ -6061,10 +6142,8 @@
     ],
     "sourceProjects": [
       "AIContractLifecycleManager",
-      "AIDigitalcasemanager",
       "AIDivorceFamilyLawNavigator",
       "AIEstatePlanningDigitalLegacy",
-      "AIImmigrationCaseManager",
       "AINotaryDocumentVerification",
       "AIProposalSOWGenerator",
       "AIeDiscoverySystem",
@@ -6077,7 +6156,6 @@
       "legal-compliance-risk/contract-negotiation-assistant",
       "legal-compliance-risk/due-diligence-assistant",
       "legal-compliance-risk/firmflow-ai-merged",
-      "legal-compliance-risk/immigration-case-manager",
       "legal-compliance-risk/public-records-search-agent",
       "legal-compliance-risk/regulatory-compliance",
       "legal-compliance-risk/tenant-rights-advisor"
@@ -6229,55 +6307,6 @@
         "path": "ios/LegalPracticeAI/Views/Main/DocumentsView.swift",
         "route": "/Main/DocumentsView",
         "originApp": "legal-compliance-risk/firmflow-ai-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDigitalcasemanager",
-        "path": "frontend/src/App.js:236",
-        "route": "/documents",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDigitalcasemanager",
-        "path": "frontend/src/App.js:68",
-        "route": "/documents",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDigitalcasemanager",
-        "path": "frontend/src/pages/Documents.js",
-        "route": "/Documents",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIImmigrationCaseManager",
-        "path": "frontend/src/App.js:88",
-        "route": "/documents",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIImmigrationCaseManager",
-        "path": "frontend/src/components/Layout.js:11",
-        "route": "/documents",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIImmigrationCaseManager",
-        "path": "frontend/src/pages/Dashboard.js:8",
-        "route": "/documents",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIImmigrationCaseManager",
-        "path": "frontend/src/pages/Documents.js",
-        "route": "/Documents",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
       },
       {
         "kind": "page",
@@ -6506,11 +6535,13 @@
     "canonicalKey": "draft email",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "page"
     ],
     "routes": [
       "/api/ai-communications/draft-email",
-      "/api/ai/draft-email"
+      "/api/ai/draft-email",
+      "/communications/ai-drafts?tool=draft-email"
     ],
     "sourceProjects": [
       "legalForms"
@@ -6519,6 +6550,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/communications/ai-drafts.ejs:1",
+        "route": "/communications/ai-drafts?tool=draft-email",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
@@ -7473,10 +7511,12 @@
     "canonicalKey": "deadline extract",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "page"
     ],
     "routes": [
-      "/api/ai-calendar/extract-deadlines"
+      "/api/ai-calendar/extract-deadlines",
+      "/calendar/ai-assistant?tool=extract-deadlines"
     ],
     "sourceProjects": [
       "legalForms"
@@ -7485,6 +7525,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/calendar/ai-assistant.ejs:1",
+        "route": "/calendar/ai-assistant?tool=extract-deadlines",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
@@ -7525,9 +7572,11 @@
     "canonicalKey": "exhibit extract metadata",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "api"
     ],
     "routes": [
+      "/ai-new?tool=extract-exhibit-metadata",
       "/extract-exhibit-metadata"
     ],
     "sourceProjects": [
@@ -7537,6 +7586,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "AICourtReportingLegalTranscription",
+        "path": "client/src/pages/AIFeaturesNewPage.js:31",
+        "route": "/ai-new?tool=extract-exhibit-metadata",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "api",
         "sourceProject": "AICourtReportingLegalTranscription",
@@ -8922,37 +8978,30 @@
     "canonicalKey": "generate",
     "aliases": [],
     "kinds": [
-      "api",
+      "ai-page",
       "page"
     ],
     "routes": [
+      "/ai-drafting/new",
       "/api/ai-drafting/generate",
-      "/api/ai/generate",
       "/api/documents/generate",
-      "/api/dsr-fulfillment/generate",
       "/api/generate",
       "/generate"
     ],
     "sourceProjects": [
-      "AIContractNegotiationAssistant",
-      "AIDueDiligenceAssistant",
-      "AIGDPRDataMappingPrivacyManager",
-      "AIImmigrationCaseManager",
-      "AIProposalSOWGenerator",
-      "AITrademarkBrandProtectionMonitor",
-      "ai_regulatory_compliance",
       "legalForms"
     ],
     "consolidatedFromApps": [
-      "legal-compliance-risk/contract-negotiation-assistant",
-      "legal-compliance-risk/due-diligence-assistant",
-      "legal-compliance-risk/firmflow-ai-merged",
-      "legal-compliance-risk/gdpr-data-mapping-privacy-manager",
-      "legal-compliance-risk/immigration-case-manager",
-      "legal-compliance-risk/public-records-search-agent",
-      "legal-compliance-risk/regulatory-compliance"
+      "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/ai-drafting/new.ejs:1",
+        "route": "/ai-drafting/new",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
@@ -8980,69 +9029,6 @@
         "path": "server.js:1779",
         "route": "/api/generate",
         "originApp": "legal-compliance-risk/firmflow-ai-merged"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIImmigrationCaseManager",
-        "path": "backend/src/routes/interviewPrep.js:15",
-        "route": "/generate",
-        "originApp": "legal-compliance-risk/immigration-case-manager"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AITrademarkBrandProtectionMonitor",
-        "path": "backend/routes/ceasedesist.js:55",
-        "route": "/generate",
-        "originApp": "legal-compliance-risk/public-records-search-agent"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AITrademarkBrandProtectionMonitor",
-        "path": "backend/routes/reports.js:54",
-        "route": "/generate",
-        "originApp": "legal-compliance-risk/public-records-search-agent"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIGDPRDataMappingPrivacyManager",
-        "path": "backend/server.js:381",
-        "route": "/api/dsr-fulfillment/generate",
-        "originApp": "legal-compliance-risk/gdpr-data-mapping-privacy-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "ai_regulatory_compliance",
-        "path": "routers/alerts.py:86",
-        "route": "/generate",
-        "originApp": "legal-compliance-risk/regulatory-compliance"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIContractNegotiationAssistant",
-        "path": "backend/src/routes/ndaGenerator.js:109",
-        "route": "/generate",
-        "originApp": "legal-compliance-risk/contract-negotiation-assistant"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIContractNegotiationAssistant",
-        "path": "backend/src/routes/termsOfServiceBuilder.js:109",
-        "route": "/generate",
-        "originApp": "legal-compliance-risk/contract-negotiation-assistant"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIDueDiligenceAssistant",
-        "path": "backend/routes/diligenceChecklist.js:17",
-        "route": "/generate",
-        "originApp": "legal-compliance-risk/due-diligence-assistant"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIProposalSOWGenerator",
-        "path": "backend/server.js:613",
-        "route": "/api/ai/generate",
-        "originApp": "legal-compliance-risk/due-diligence-assistant"
       }
     ]
   },
@@ -13829,9 +13815,11 @@
     "canonicalKey": "delivery optimize routing",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "api"
     ],
     "routes": [
+      "/ai-new?tool=optimize-delivery-routing",
       "/optimize-delivery-routing"
     ],
     "sourceProjects": [
@@ -13841,6 +13829,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "AICourtReportingLegalTranscription",
+        "path": "client/src/pages/AIFeaturesNewPage.js:59",
+        "route": "/ai-new?tool=optimize-delivery-routing",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "api",
         "sourceProject": "AICourtReportingLegalTranscription",
@@ -14495,9 +14490,11 @@
     "canonicalKey": "deposition need predict",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "api"
     ],
     "routes": [
+      "/ai-new?tool=predict-deposition-needs",
       "/predict-deposition-needs"
     ],
     "sourceProjects": [
@@ -14507,6 +14504,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "AICourtReportingLegalTranscription",
+        "path": "client/src/pages/AIFeaturesNewPage.js:45",
+        "route": "/ai-new?tool=predict-deposition-needs",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "api",
         "sourceProject": "AICourtReportingLegalTranscription",
@@ -16022,26 +16026,36 @@
     "canonicalKey": "reject",
     "aliases": [],
     "kinds": [
-      "api",
+      "ai-page",
       "page"
     ],
     "routes": [
-      "/:id/reject",
       "/api/ai-billing/suggestions/:id/reject",
-      "/api/ai-calendar/suggestions/:id/reject"
+      "/api/ai-calendar/suggestions/:id/reject",
+      "/billing/ai-suggestions?tool=reject",
+      "/calendar/ai-assistant?tool=reject"
     ],
     "sourceProjects": [
-      "AIContractLifecycleManager",
-      "AIContractNegotiationAssistant",
-      "AIPermitZoningCompliance",
       "legalForms"
     ],
     "consolidatedFromApps": [
-      "legal-compliance-risk/contract-negotiation-assistant",
-      "legal-compliance-risk/firmflow-ai-merged",
-      "legal-compliance-risk/regulatory-compliance"
+      "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/billing/ai-suggestions.ejs:1",
+        "route": "/billing/ai-suggestions?tool=reject",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/calendar/ai-assistant.ejs:1",
+        "route": "/calendar/ai-assistant?tool=reject",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
@@ -16055,34 +16069,6 @@
         "path": "routes/ai-calendar.js:424",
         "route": "/api/ai-calendar/suggestions/:id/reject",
         "originApp": "legal-compliance-risk/firmflow-ai-merged"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIPermitZoningCompliance",
-        "path": "backend/routes/permits.js:184",
-        "route": "/:id/reject",
-        "originApp": "legal-compliance-risk/regulatory-compliance"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIContractLifecycleManager",
-        "path": "backend/routes/approvals.js:133",
-        "route": "/:id/reject",
-        "originApp": "legal-compliance-risk/contract-negotiation-assistant"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIContractNegotiationAssistant",
-        "path": "backend/src/routes/approvals.js:129",
-        "route": "/:id/reject",
-        "originApp": "legal-compliance-risk/contract-negotiation-assistant"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIContractNegotiationAssistant",
-        "path": "backend/src/routes/redlines.js:103",
-        "route": "/:id/reject",
-        "originApp": "legal-compliance-risk/contract-negotiation-assistant"
       }
     ]
   },
@@ -17026,10 +17012,12 @@
     "canonicalKey": "note scan",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "page"
     ],
     "routes": [
-      "/api/ai-billing/scan-notes"
+      "/api/ai-billing/scan-notes",
+      "/billing/ai-suggestions?tool=scan-notes"
     ],
     "sourceProjects": [
       "legalForms"
@@ -17038,6 +17026,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/billing/ai-suggestions.ejs:1",
+        "route": "/billing/ai-suggestions?tool=scan-notes",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
@@ -17498,11 +17493,13 @@
     "canonicalKey": "send",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "page"
     ],
     "routes": [
       "/api/ai-communications/draft/:id/send",
       "/api/invoices/:id/send",
+      "/communications/ai-drafts?tool=send",
       "/send"
     ],
     "sourceProjects": [
@@ -17512,6 +17509,13 @@
       "legal-compliance-risk/firmflow-ai-merged"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "legalForms",
+        "path": "views/communications/ai-drafts.ejs:1",
+        "route": "/communications/ai-drafts?tool=send",
+        "originApp": "legal-compliance-risk/firmflow-ai-merged"
+      },
       {
         "kind": "page",
         "sourceProject": "legalForms",
