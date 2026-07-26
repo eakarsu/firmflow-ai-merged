@@ -3,7 +3,7 @@
 Industry: **Legal, Compliance & Risk**  
 Specialization: **Firmflow AI**
 
-This standalone application consolidates source-backed capabilities into 393 optimized features, including 19 visible data-backed or AI-enabled views. Its public demo SQLite database contains 70 sanitized source rows across 3 imported tables and 120 operational workflow records.
+This standalone application consolidates source-backed capabilities into 393 optimized features, including all 393 source-backed feature views. Its public demo SQLite database contains 70 sanitized source rows across 3 imported tables and 120 operational workflow records.
 
 ## Run locally
 
